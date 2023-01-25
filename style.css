@@ -137,3 +137,36 @@ body{
 
 
 /*FIM de Todo conteúdo da tela 3.2*/
+
+/*Começo de Todo conteúdo da tela 3.3*/
+
+.page3-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quizzBoxPage3-3{
+    width: 600px;
+    height: 316px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    background-color:#FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.quizzQuestion-3{
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/*FIM de Todo conteúdo da tela 3.3*/
