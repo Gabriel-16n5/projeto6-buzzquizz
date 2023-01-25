@@ -135,6 +135,18 @@ body{
     line-height: 23px;
 }
 
+.page3-2ToPage3-3{
+    width: 368px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    
+    border: 1px solid #D1D1D1;
+    border-radius: 15px;
+    background-color: #EC362D;
+}
 
 /*FIM de Todo conteúdo da tela 3.2*/
 
@@ -169,4 +181,68 @@ body{
     margin-top: 10px;
 }
 
+.page3-3ToPage3-4{
+    width: 368px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    
+    border: 1px solid #D1D1D1;
+    border-radius: 15px;
+    background-color: #EC362D;
+}
 /*FIM de Todo conteúdo da tela 3.3*/
+
+/*Começo de Todo conteúdo da tela 3.4*/
+
+.page3-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.accessQuizz{
+    width: 220px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    
+    border: 1px solid #D1D1D1;
+    border-radius: 15px;
+    background-color: #EC362D;
+}
+
+.backToHome{
+    width: 220px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #E5E5E5;
+    border: 0px solid #D1D1D1;
+    border-radius: 15px;
+}
+
+.textButtonHome{
+    font-size: 21px;
+    font-family:'Roboto';
+    font-weight: 400;
+    color:#818181;
+    ;
+    line-height: 25px;
+}
+
+.quizzDoneCreated{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+/*FIM de Todo conteúdo da tela 3.4*/
