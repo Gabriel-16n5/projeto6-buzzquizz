@@ -17,7 +17,7 @@ body{
     line-height: 43px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
+/*Começo de Todo conteúdo da tela 3.1*/
 .page3-1{
     display: flex;
     justify-content: center;
@@ -99,3 +99,41 @@ body{
 .displayNone{
     display:none;
 }
+/*FIM de Todo conteúdo da tela 3.1*/
+
+/*Começo de Todo conteúdo da tela 3.2*/
+.page3-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quizzBoxPage3-2{
+    width: 600px;
+    height: 825px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    background-color:#FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 80px;
+}
+
+.insideQuestionQuizz{
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family:'Roboto';
+    font-weight: 700;
+    color: #000000;
+    line-height: 23px;
+}
+
+
+/*FIM de Todo conteúdo da tela 3.2*/
