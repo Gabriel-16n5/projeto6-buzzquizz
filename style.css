@@ -1,6 +1,7 @@
 body{
     width: 1440px;
-    background-color: #E5E5E5;
+    height: 1024px;
+    background-color: #FAFAFA;
 }
 
 .Header{
@@ -17,6 +18,187 @@ body{
     line-height: 43px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+/*conteúdo tela 1-1*/
+
+.box{
+    margin-top: 77px;
+    margin-left: 194px;
+    display: flex;
+    flex-direction: column;
+    width: 1051px;
+    height: 181px;
+    border: 1px;
+    border-style: dashed;
+    border-color: #D5D5D5;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.none{
+    width: 250px;
+    height: 107px;
+    margin-left: 401px;
+    text-align: center;
+}
+
+.none p{
+    font-family: 'Roboto';
+    font-style: nome;
+    font-size: 20px;
+    line-height: 23px;
+    color: #B9B9B9;
+}
+
+.createButton{
+    background-color: #FAFAFA;
+    border: none;
+}
+
+.create{
+    width: 151px;
+    height: 40px;
+    border: 1px;
+    border-style: dashed;
+    border-color: #EC362D;
+    border-radius: 50px;
+    text-align: center;
+    margin-left: 451px;
+}
+
+.create p{
+    margin-top: 9px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    color: #EC362D;
+}
+
+.all{
+    margin-left: 194px;
+    margin-top: 77px;
+    position: absolute;
+}
+
+.all p{
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23.44px;
+
+}
+
+.quizzes{
+    margin-left: 194px;
+    float:left;
+}
+
+.quizzes img{
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-right: 15px;
+    position: relative;
+}
+
+.text{
+    width: 301px;
+    height: 54px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 19px;
+    color: #FFFFFF;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+#t1{
+    margin-top: -35px;
+    margin-left: 170px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#t2{
+    margin-top: -35px;
+    margin-left: 530px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#t3{
+    margin-top: -35px;
+    margin-left: 890px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#t4{
+    margin-top: -35px;
+    margin-left: 170px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#t5{
+    margin-top: -35px;
+    margin-left: 530px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#t6{
+    margin-top: -35px;
+    margin-left: 890px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#t7{
+    margin-top: 254px;
+}
+
+#fix{
+    margin-top: 105px;
+}
+
+/*conteúdo tela 1-2*/
+
+.yourQuizzes {
+    margin-left: 194px;
+    margin-top: 69px;
+    display: flex;
+}
+
+.yourQuizzes p{
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.yourQuizzes button{
+    width: 31px;
+    height: 30px;
+}
+
+.createButton ion-icon{
+    width: 31px;
+    height: 31px;
+    color: red;
+    margin-top: -4px;
+    margin-left: 17px;
+}
+
+#screen2{
+    margin-top: 80px;
+}
+
 /*Começo de Todo conteúdo da tela 3.1*/
 .page3-1{
     display: flex;
