@@ -3,7 +3,9 @@
 body{
     width: 1440px;
     height: 1024px;
-    background-color: #FAFAFA;
+    /* background-color: #FAFAFA; */
+    background-color: red;
+    color: blue;
 }
 
 .Header{
