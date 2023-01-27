@@ -4,6 +4,8 @@ body{
     width: 1440px;
     height: 1024px;
     background-color: #FAFAFA;
+    font-family: 'Roboto';
+    font-style: normal;
 }
 
 .Header{
@@ -14,7 +16,6 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 43px;
-    font-family:'Roboto';
     font-weight: 700;
     color: #FFFFFF;
     line-height: 43px;
@@ -45,7 +46,7 @@ body{
 }
 
 .none p{
-    font-family: 'Roboto';
+    /* Verificar font-style */
     font-style: nome;
     font-size: 20px;
     line-height: 23px;
@@ -70,8 +71,6 @@ body{
 
 .create p{
     margin-top: 9px;
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 21px;
     line-height: 25px;
@@ -85,11 +84,9 @@ body{
 }
 
 .all p{
-    font-family: 'Roboto';
     font-weight: 700;
     font-size: 20px;
     line-height: 23.44px;
-
 }
 
 .quizzes{
@@ -109,7 +106,6 @@ body{
 .text{
     width: 301px;
     height: 54px;
-    font-family: 'Roboto';
     font-weight: 400;
     font-size: 19px;
     color: #FFFFFF;
@@ -178,7 +174,6 @@ body{
 }
 
 .yourQuizzes p{
-    font-family: 'Roboto';
     font-weight: 700;
     font-size: 20px;
     line-height: 23px;
@@ -213,9 +208,7 @@ body{
 .quizzName{
     width: 100%;
     height: 142px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(fundo.png);  
-    font-family: 'Roboto';
-    font-style: normal;
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(fundo.png);   */
     font-weight: 400;
     font-size: 39px;
     line-height: 46px;
@@ -230,7 +223,7 @@ body{
     flex-direction: column;
     margin-top: 42px;
     width: 759px;
-    height: 676px;
+    /* height: 676px; */
     padding: 30px;
     align-items: center;
     background: #FFFFFF;
@@ -240,8 +233,6 @@ body{
     width: 688.16px;
     height: 137.99px;
     background: #434CA0;
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 700;
     font-size: 23px;
     line-height: 27px;
@@ -256,8 +247,6 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
     width: 688.16px;
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 23px;
@@ -270,7 +259,9 @@ body{
     margin-top: 20px;
 }
 .nameOption{
+    width: 329px;
     margin-top: 8px;
+    flex-wrap: word-wrap;    
 }
 .notChosen{
     opacity: 0.3;
@@ -297,8 +288,7 @@ body{
     justify-content: center;
     background: #EC362D;
     color: #FFFFFF;
-    font-family: 'Roboto';
-    font-style: normal;
+    
     font-weight: 700;
     font-size: 23px;
     line-height: 27px;
@@ -321,8 +311,6 @@ body{
     flex-wrap: wrap;
     width: 328px;
     height: 250px;
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 700;
     font-size: 19px;
     line-height: 25px;
@@ -333,8 +321,6 @@ body{
     height: 52px;
     background: #EC362D;
     border-radius: 15px;
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 21px;
     line-height: 25px;
@@ -349,8 +335,6 @@ body{
 }
 .goHome{
     border:none;
-    font-family: 'Roboto';
-    font-style: normal;
     font-weight: 400;
     font-size: 21px;
     line-height: 25px;
@@ -383,7 +367,6 @@ body{
     padding-top: 80px;
     padding-bottom: 30px;
     font-size: 23px;
-    font-family:'Roboto';
     font-weight: 700;
     color: #000000;
     line-height: 27px;
@@ -418,7 +401,6 @@ body{
     width: 564px;
     height: 46px;
     font-size: 19px;
-    font-family:'Roboto';
     font-weight: 400;
     color: #bababa;
     line-height: 22px;
@@ -440,7 +422,6 @@ body{
 
 .textButton{
     font-size: 21px;
-    font-family:'Roboto';
     font-weight: 400;
     color: #fff5f4;
     line-height: 25px;
@@ -479,7 +460,6 @@ body{
     justify-content: flex-start;
     justify-content: space-between;
     font-size: 20px;
-    font-family:'Roboto';
     font-weight: 700;
     color: #000000;
     line-height: 23px;
@@ -581,10 +561,8 @@ body{
 
 .textButtonHome{
     font-size: 21px;
-    font-family:'Roboto';
     font-weight: 400;
     color:#818181;
-    ;
     line-height: 25px;
 }
 
@@ -612,7 +590,7 @@ body{
     .questionBox{
         margin-top: 24px;
         width: 375px;
-        height: 436px;
+        /* height: 436px; */
         padding: 18px;
     }
     .questionTitle{
@@ -632,6 +610,7 @@ body{
         margin-top: 13px;
     }
     .nameOption{
+        width: 163px;
         margin-top: 5px;
     }
     .resultBox{
