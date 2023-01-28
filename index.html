@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="Header">BuzzQuizz</div>
-    <div class="page1-1">
+    <div class="page1-1 displayNone">
         <div class="box">
             <div class="none">
                 <p>Você não criou nenhum quiz ainda :(</p>
@@ -105,15 +105,17 @@
         <button class="restartQuizz">Reiniciar Quizz</button>
         <button class="goHome">Voltar pra home</button>
     </div>
-    <div class="page3-1 displayNone">
+    <div class="page3-1 ">
         <h1 class="titlePage">Comece pelo começo</h1>
-        <div class="quizzBox">
-            <div class="quizzQuestion"><p class="quizzText">Título do seu quizz</p></div>
-            <div class="quizzQuestion"><p class="quizzText">URL da imagem do seu quizz</p></div>
-            <div class="quizzQuestion"><p class="quizzText">Quantidade de perguntas do quizz</p></div>
-            <div class="quizzQuestion"><p class="quizzText">Quantidaded de níveis do quizz</p></div>
-        </div>
-        <button onclick="page31to32()" class="page3-1ToPage3-2"><p class="textButton">Prosseguir pra criar perguntas</p></button>
+        <form action="#" onsubmit="objectDataQuizz();return false">
+            <div class="quizzBox"> 
+                    <div class="quizzQuestion"><input class="quizzText" type="text" name="titulodoquizz" id="quizzTitle" minlength="20" maxlength="65" placeholder="Título do seu quizz"></div>
+                    <div class="quizzQuestion"><input class="quizzText" type="url" name="urldoquizz" id="quizzUrlImage" placeholder="URL da imagem do seu quizz"></div>
+                    <div class="quizzQuestion"><input class="quizzText" type="number" id="qtdQuestions" min="3" placeholder="Quantidade de perguntas do quizz (mínimo 3)"></div>
+                    <div class="quizzQuestion"><input class="quizzText" type="number" id="qtdLevels" min="2"  placeholder="Quantidade de níveis do quizz (mínimo 2)"></div>
+            </div>
+            <button onclick="page31to32()" class="page3-1ToPage3-2"><p class="textButtonP31">Prosseguir pra criar perguntas</p></button>
+        </form>
     </div>
     <div class="page3-2Full displayNone">
         <div class="page3-2 ">
@@ -121,132 +123,136 @@
             <div class="displayNoneBolado1 displayNoneBolado2" id="quizzBoxB">
                 <h2 onclick="showQuizzToggle1(this)"  class="insideQuestionQuizz displayNoneBolado displayNoneBolado2">Pergunta 1<ion-icon name="create"></ion-icon></h2>
             </div>
-            <div id="quizzBox321" class="quizzBoxPage3-2">
-                <h2 onclick="hiddenQuizzToggle1(this)" class="insideQuestionQuizz">Pergunta 1<ion-icon name="create"></ion-icon></h2>
+            <form action="#" onsubmit="objectDataQuizz();return false">
+                <div id="quizzBox321" class="quizzBoxPage3-2">
+                    <h2 onclick="hiddenQuizzToggle1(this)" class="insideQuestionQuizz">Pergunta 1<ion-icon name="create"></ion-icon></h2>
+                        <div class="duoQuestion">
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="q1AnswerText" minlength="20" placeholder="Texto da pergunta"></div>
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="bgColorAnswer" placeholder="Cor de fundo da pergunta (Em hexadecimal)"></div>
+                        </div>
+                        <h2 class="insideQuestionQuizz">Resposta correta</h2>
+                        <div class="duoQuestion">
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="q1CorrectAnswer" value="Resposta correta"></div>
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="q1CorrectAnswerUrl" value="URL da imagem"></div>
+                        </div>
+                        <h2 class="insideQuestionQuizz">Respostas incorretas</h2>
+                        <div class="duoQuestion">
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="q1IncorrectAnswer1" value="Resposta incorreta 1"></div>
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="q1IncorrectAnswerUrl1" value="URL da imagem 1"></div>
+                        </div>
+                        <div class="duoQuestion">
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="q1IncorrectAnswer2" value="Resposta incorreta 2"></div>
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="q1IncorrectAnswerUrl2" value="URL da imagem 2"></div>
+                        </div>
+                        <div class="duoQuestion">
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="q1IncorrectAnswer3" value="Resposta incorreta 3"></div>
+                            <div class="quizzQuestion"><input class="quizzText" type="text" id="q1IncorrectAnswerUrl3" value="URL da imagem 3"></div>
+                        </div>
+                </div>
+                <div class="displayNoneBolado3 displayNoneBolado4" id="quizzBoxB">
+                    <h2 onclick="showQuizzToggle2(this)"  class="insideQuestionQuizz displayNoneBolado displayNoneBolado2">Pergunta 2<ion-icon name="create"></ion-icon></h2>
+                </div>
+                <div id="quizzBox322" class="quizzBoxPage3-2">
+                    <h2 onclick="hiddenQuizzToggle2()" class="insideQuestionQuizz">Pergunta 2<ion-icon name="create"></ion-icon></h2>
                     <div class="duoQuestion">
-                        <div class="quizzQuestion "><p class="quizzText">Texto da pergunta</p></div>
-                        <div class="quizzQuestion"><p class="quizzText">Cor de fundo da pergunta</p></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q2AnswerText" minlength="20" placeholder="Texto da pergunta"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="bgColorAnswer" placeholder="Cor de fundo da pergunta (Em hexadecimal)"></div>
                     </div>
                     <h2 class="insideQuestionQuizz">Resposta correta</h2>
                     <div class="duoQuestion">
-                        <div class="quizzQuestion"><p class="quizzText">Resposta correta</p></div>
-                        <div class="quizzQuestion"><p class="quizzText">URL da imagem</p></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q2CorrectAnswer" value="Resposta correta"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q2CorrectAnswerUrl" value="URL da imagem"></div>
                     </div>
                     <h2 class="insideQuestionQuizz">Respostas incorretas</h2>
                     <div class="duoQuestion">
-                        <div class="quizzQuestion"><p class="quizzText">Resposta incorreta 1</p></div>
-                        <div class="quizzQuestion"><p class="quizzText">URL da imagem 1</p></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q2IncorrectAnswer1" value="Resposta incorreta 1"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q2IncorrectAnswerUrl1" value="URL da imagem 1"></div>
                     </div>
                     <div class="duoQuestion">
-                        <div class="quizzQuestion"><p class="quizzText">Resposta incorreta 2</p></div>
-                        <div class="quizzQuestion"><p class="quizzText">URL da imagem 2</p></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q2IncorrectAnswer2" value="Resposta incorreta 2"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q2IncorrectAnswerUrl2" value="URL da imagem 2"></div>
                     </div>
                     <div class="duoQuestion">
-                        <div class="quizzQuestion"><p class="quizzText">Resposta incorreta 3</p></div>
-                        <div class="quizzQuestion"><p class="quizzText">URL da imagem 3</p></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q2IncorrectAnswer3" value="Resposta incorreta 3"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q2IncorrectAnswerUrl3" value="URL da imagem 3"></div>
                     </div>
-            </div>
-            <div class="displayNoneBolado3 displayNoneBolado4" id="quizzBoxB">
-                <h2 onclick="showQuizzToggle2(this)"  class="insideQuestionQuizz displayNoneBolado displayNoneBolado2">Pergunta 2<ion-icon name="create"></ion-icon></h2>
-            </div>
-            <div id="quizzBox322" class="quizzBoxPage3-2">
-                <h2 onclick="hiddenQuizzToggle2()" class="insideQuestionQuizz">Pergunta 2<ion-icon name="create"></ion-icon></h2>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Texto da pergunta</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">Cor de fundo da pergunta</p></div>
                 </div>
-                <h2 class="insideQuestionQuizz">Resposta correta</h2>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Resposta correta</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">URL da imagem</p></div>
+                <div class="displayNoneBolado5 displayNoneBolado6" id="quizzBoxB">
+                    <h2 onclick="showQuizzToggle3(this)"  class="insideQuestionQuizz displayNoneBolado displayNoneBolado2">Pergunta 3<ion-icon name="create"></ion-icon></h2>
                 </div>
-                <h2 class="insideQuestionQuizz">Respostas incorretas</h2>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Resposta incorreta 1</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">URL da imagem 1</p></div>
+                <div id="quizzBox323" class="quizzBoxPage3-2">
+                    <h2 onclick="hiddenQuizzToggle3(this)" class="insideQuestionQuizz">Pergunta 3<ion-icon name="create"></ion-icon></h2>
+                    <div class="duoQuestion">
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q3AnswerText" minlength="20" placeholder="Texto da pergunta"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="bgColorAnswer" placeholder="Cor de fundo da pergunta (Em hexadecimal)"></div>
+                    </div>
+                    <h2 class="insideQuestionQuizz">Resposta correta</h2>
+                    <div class="duoQuestion">
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q3CorrectAnswer" value="Resposta correta"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q3CorrectAnswerUrl" value="URL da imagem"></div>
+                    </div>
+                    <h2 class="insideQuestionQuizz">Respostas incorretas</h2>
+                    <div class="duoQuestion">
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q3IncorrectAnswer1" value="Resposta incorreta 1"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q3IncorrectAnswerUrl1" value="URL da imagem 1"></div>
+                    </div>
+                    <div class="duoQuestion">
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q3IncorrectAnswer2" value="Resposta incorreta 2"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q3IncorrectAnswerUrl2" value="URL da imagem 2"></div>
+                    </div>
+                    <div class="duoQuestion">
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q3IncorrectAnswer3" value="Resposta incorreta 3"></div>
+                        <div class="quizzQuestion"><input class="quizzText" type="text" id="q3IncorrectAnswerUrl3" value="URL da imagem 3"></div>
+                    </div>
                 </div>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Resposta incorreta 2</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">URL da imagem 2</p></div>
-                </div>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Resposta incorreta 3</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">URL da imagem 3</p></div>
-                </div>
-            </div>
-            <div class="displayNoneBolado5 displayNoneBolado6" id="quizzBoxB">
-                <h2 onclick="showQuizzToggle3(this)"  class="insideQuestionQuizz displayNoneBolado displayNoneBolado2">Pergunta 3<ion-icon name="create"></ion-icon></h2>
-            </div>
-            <div id="quizzBox323" class="quizzBoxPage3-2">
-                <h2 onclick="hiddenQuizzToggle3(this)" class="insideQuestionQuizz">Pergunta 3<ion-icon name="create"></ion-icon></h2>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Texto da pergunta</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">Cor de fundo da pergunta</p></div>
-                </div>
-                <h2 class="insideQuestionQuizz">Resposta correta</h2>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Resposta correta</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">URL da imagem</p></div>
-                </div>
-                <h2 class="insideQuestionQuizz">Respostas incorretas</h2>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Resposta incorreta 1</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">URL da imagem 1</p></div>
-                </div>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Resposta incorreta 2</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">URL da imagem 2</p></div>
-                </div>
-                <div class="duoQuestion">
-                    <div class="quizzQuestion"><p class="quizzText">Resposta incorreta 3</p></div>
-                    <div class="quizzQuestion"><p class="quizzText">URL da imagem 3</p></div>
-                </div>
-            </div>
-        
-             <button onclick="page32to33()" class="page3-2ToPage3-3"><p class="textButton">Prosseguir pra criar níveis</p></button>
+            
+                <button onclick="page32to33()" class="page3-2ToPage3-3"><p class="textButton">Prosseguir pra criar níveis</p></button>
+            </form>
         </div>
     </div>
     <div class="page3-3Full displayNone">
         <div class="page3-3">
             <h1 class="titlePage">Agora, decida os níveis</h1>
-            <div class="displayNoneBolado7 displayNoneBolado8" id="quizzBoxB">
-                <h2 onclick="showQuizzToggle4()" class="insideQuestionQuizz">Nível 1<ion-icon name="create"></ion-icon></h2>
-            </div>
-            <div id="quizzBox331" class="quizzBoxPage3-3">
-                <h2 onclick="hiddenQuizzToggle4()" class="insideQuestionQuizz">Nível 1<ion-icon name="create"></ion-icon></h2>
-                <div class="quadQuestion">
-                    <div class="quizzQuestion-3"><p class="quizzText">Título do nível</p></div>
-                    <div class="quizzQuestion-3"><p class="quizzText">% de acerto mínima</p></div>
-                    <div class="quizzQuestion-3"><p class="quizzText">URL da imagem do nível</p></div>
-                    <div class="quizzQuestion-3"><p class="quizzText">Descrição do nível</p></div>
+            <form action="#" onsubmit="objectDataQuizz();return false">
+                <div class="displayNoneBolado7 displayNoneBolado8" id="quizzBoxB">
+                    <h2 onclick="showQuizzToggle4()" class="insideQuestionQuizz">Nível 1<ion-icon name="create"></ion-icon></h2>
                 </div>
-            </div>
-            <div class="displayNoneBolado9 displayNoneBolado10" id="quizzBoxB">
-                <h2 onclick="showQuizzToggle5()" class="insideQuestionQuizz">Nível 2<ion-icon name="create"></ion-icon></h2>
-            </div>
-            <div id="quizzBox332" class="quizzBoxPage3-3">
-                <h2 onclick="hiddenQuizzToggle5()" class="insideQuestionQuizz">Nível 2<ion-icon name="create"></ion-icon></h2>
-                <div class="quadQuestion">
-                    <div class="quizzQuestion-3"><p class="quizzText">Título do nível</p></div>
-                    <div class="quizzQuestion-3"><p class="quizzText">% de acerto mínima</p></div>
-                    <div class="quizzQuestion-3"><p class="quizzText">URL da imagem do nível</p></div>
-                    <div class="quizzQuestion-3"><p class="quizzText">Descrição do nível</p></div>
+                <div id="quizzBox331" class="quizzBoxPage3-3">
+                    <h2 onclick="hiddenQuizzToggle4()" class="insideQuestionQuizz">Nível 1<ion-icon name="create"></ion-icon></h2>
+                    <div class="quadQuestion">
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" minlength="10" id="l1title" value="Título do nível"></div>
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" id="l1%min" value="% de acerto mínima"></div>
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" id="l1UrlImage" value="URL da imagem do nível"></div>
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" minlength="30" id="l1Descrition" value="Descrição do nível"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="displayNoneBolado11 displayNoneBolado12" id="quizzBoxB">
-                <h2 onclick="showQuizzToggle6()" class="insideQuestionQuizz">Nível 3<ion-icon name="create"></ion-icon></h2>
-            </div>
-            <div id="quizzBox333" class="quizzBoxPage3-3">
-                <h2 onclick="hiddenQuizzToggle6()" class="insideQuestionQuizz">Nível 3<ion-icon name="create"></ion-icon></h2>
-                <div class="quadQuestion">
-                    <div class="quizzQuestion-3"><p class="quizzText">Título do nível</p></div>
-                    <div class="quizzQuestion-3"><p class="quizzText">% de acerto mínima</p></div>
-                    <div class="quizzQuestion-3"><p class="quizzText">URL da imagem do nível</p></div>
-                    <div class="quizzQuestion-3"><p class="quizzText">Descrição do nível</p></div>
+                <div class="displayNoneBolado9 displayNoneBolado10" id="quizzBoxB">
+                    <h2 onclick="showQuizzToggle5()" class="insideQuestionQuizz">Nível 2<ion-icon name="create"></ion-icon></h2>
                 </div>
-            </div>
+                <div id="quizzBox332" class="quizzBoxPage3-3">
+                    <h2 onclick="hiddenQuizzToggle5()" class="insideQuestionQuizz">Nível 2<ion-icon name="create"></ion-icon></h2>
+                    <div class="quadQuestion">
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" minlength="10" id="l2title" value="Título do nível"></div>
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" id="l2%min" value="% de acerto mínima"></div>
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" id="l2UrlImage" value="URL da imagem do nível"></div>
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" minlength="30" id="l2Descrition" value="Descrição do nível"></div>
+                    </div>
+                </div>
+                <div class="displayNoneBolado11 displayNoneBolado12" id="quizzBoxB">
+                    <h2 onclick="showQuizzToggle6()" class="insideQuestionQuizz">Nível 3<ion-icon name="create"></ion-icon></h2>
+                </div>
+                <div id="quizzBox333" class="quizzBoxPage3-3">
+                    <h2 onclick="hiddenQuizzToggle6()" class="insideQuestionQuizz">Nível 3<ion-icon name="create"></ion-icon></h2>
+                    <div class="quadQuestion">
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" minlength="10" id="l3title" value="Título do nível"></div>
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" id="l3%min" value="% de acerto mínima"></div>
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" id="l3UrlImage" value="URL da imagem do nível"></div>
+                        <div class="quizzQuestion-3"><input class="quizzText" type="text" minlength="30" id="l3Descrition" value="Descrição do nível"></div>
+                    </div>
+                </div>
         
-             <button onclick="page33to34()" class="page3-3ToPage3-4"><p class="textButton">Finalizar Quizz</p></button>
+                 <button onclick="page33to34()" class="page3-3ToPage3-4"><p class="textButton">Finalizar Quizz</p></button>
+            </form>
         </div>
     </div>
     <div class="page3-4Full displayNone">

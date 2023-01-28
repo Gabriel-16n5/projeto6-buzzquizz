@@ -455,6 +455,14 @@ body{
     background-color: #EC362D;
 }
 
+.textButtonP31{
+    font-size: 21px;
+    font-family:'Roboto';
+    font-weight: 400;
+    color: #fff5f4;
+    line-height: 25px;
+}
+
 .textButton{
     font-size: 21px;
     font-family:'Roboto';
