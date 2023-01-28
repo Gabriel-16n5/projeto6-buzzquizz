@@ -3,45 +3,82 @@ let quizzChosen={};
 let levels = {};
 let numQuestions = 0;
 let score=0;
-let finalScore = Number((score/numQuestions)*100);
+let minLevel=0;
 const page2 = document.querySelector(".page2");
 
+/* Para voltar a tela 1 */
+function gohome(){
+    alert("Tela 1");
+}
+
+/* para reiniciar Quizz */
+function restartQuizz(){
+    /* as respostas zeradas pro estado inicial */
+    quizzChosen={};
+    levels = {};
+    numQuestions = 0;
+    score=0;
+    minLevel=0;
+    
+    getQuizz();
+    /* a tela deverá ser scrollada novamente para o topo,  */
+    function scroll(){
+        const start = document.querySelector(".page2");
+        start.scrollIntoView({block: "start"});
+    }
+    setTimeout(scroll, 500);
+}
 
 /* Exibindo o resultado final */
 function finalResult(){
-    
-    console.log("final");
-    console.log(numQuestions);
-    console.log(score);
-    console.log(finalScore);
-    /* for(let i=0; i<levels.length; i++){
-        if(levels[i].minValue>finalScore){
-            finalScore=levels[i].minValue;
+    const finalScore = ((score / numQuestions) * 100).toFixed(0); 
+
+    /* Descobrindo o nível mínimo */
+
+    for(let i=0; i<levels.length; i++){
+        
+        if(finalScore>levels[i].minValue && levels[i].minValue>minLevel){
+            minLevel=levels[i].minValue;
+            finalImage=levels[i].image;
+            finalText=levels[i].text;
+            finalTitle=levels[i].title;
         }
-    } */
+    } 
 
     page2.innerHTML += `
-    <div class="resultBox">
-        <div class="result">${finalScore} % de acerto: ${score}</div>
+    <div class="resultBox hidden">
+        <div class="result">${finalScore}% de acerto: ${finalTitle}</div>
         <div class="messageFinal">
-            <img src="${score}">
-            <div class="textFinal">Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</div>
+            <img src="${finalImage}">
+            <div class="textFinal">${finalText}</div>
         </div>
     </div>
-    <button onclick="console.log("restart")" class="restartQuizz">Reiniciar Quizz</button>
-    <button onclick="console.log("home")" class="goHome">Voltar pra home</button>
+    <button onclick="restartQuizz()" class="restartQuizz hidden">Reiniciar Quizz</button>
+    <button onclick="gohome()" class="goHome hidden">Voltar pra home</button>
     `
+    /* scrollar a página após 2 segundos */
     const next = document.querySelector(".resultBox");
-    next.scrollIntoView();
+    
+    /* scrollar a página após 2 segundos */
+    /* função setTimeout */
+    function scroll(){
+        next.classList.remove('hidden');
+        document.querySelector(".restartQuizz").classList.remove('hidden');
+        document.querySelector(".goHome").classList.remove('hidden');
+        next.scrollIntoView({behavior:"smooth"}); 
+        
+    }
+    setTimeout(scroll, 2000);
+    
 }
 
 
 /* Escolhendo a alternativa */
 function optionChosen(selected){
-    
+    /* para impedir a mudança de resposta */
     if(selected.classList.value === "option"){
         const options = selected.parentNode.querySelectorAll(".option");
-        
+        /* para mostrar gaarito ao clicar */
         for (let i=0; i<options.length; i++){
             options[i].classList.add('notChosen');
             
@@ -63,15 +100,20 @@ function optionChosen(selected){
         }
 
         /* Para scrollar para o próximo box */
-        selected.parentNode.classList.remove('void');
+        selected.parentNode.parentNode.classList.remove('void');
         const next = document.querySelector(".void");
         if(next === null){
             finalResult();
         }
-        next.scrollIntoView();
-    }
-    
-    
+        /* scrollar a página após 2 segundos */
+        /* função setTimeout */
+        else{
+            function scroll(){
+                next.scrollIntoView({behavior:"smooth"}); 
+            }
+            setTimeout(scroll, 2000);
+        }
+    }    
 }
 
 
@@ -96,9 +138,9 @@ function starting(resposta){
             `
         }
 
-        questionsQuizz += `<div class="questionBox">
+        questionsQuizz += `<div class="questionBox void">
             <div style="background-color:${quizzChosen.questions[i].color};" class="questionTitle">${quizzChosen.questions[i].title}</div>
-            <div class="options void"> 
+            <div class="options"> 
             ${options}
             </div>
         </div>`

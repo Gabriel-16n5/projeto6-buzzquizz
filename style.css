@@ -203,6 +203,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 300px;
     
 }
 .quizzName{
@@ -241,6 +242,8 @@ body{
     align-items: center;
     text-align: center;
     color: #FFFFFF;
+    padding: 25px;
+    word-break: break-all;
 }
 .options{
     display: flex;
@@ -275,7 +278,7 @@ body{
 .resultBox{
     margin-top: 44px;
     width: 759px;
-    height: 430px;
+    /* height: 430px; */
     padding: 18px;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
@@ -288,13 +291,14 @@ body{
     justify-content: center;
     background: #EC362D;
     color: #FFFFFF;
-    
     font-weight: 700;
     font-size: 23px;
     line-height: 27px;
     display: flex;
     align-items: center;
     text-align: center;
+    padding: 22px 16px;
+    word-break: break-all;
 }
 .messageFinal{
     display: flex;
@@ -309,12 +313,15 @@ body{
 .textFinal{
     display: flex;
     flex-wrap: wrap;
+    word-wrap: break-word;
     width: 328px;
-    height: 250px;
+    /* height: 250px; */
     font-weight: 700;
     font-size: 19px;
     line-height: 25px;
     color: #484848;
+    padding-bottom: 15px;
+    word-break: break-all;
 }
 .restartQuizz{
     width: 260.38px;
@@ -341,7 +348,7 @@ body{
     display: flex;
     align-items: center;
     text-align: center;
-    background-color: #E5E5E5;
+    background-color: #FAFAFA;
     color: #818181;
     margin-bottom: 85px;
 }
@@ -598,6 +605,7 @@ body{
         height: 89px;
         font-size: 19px;
         line-height: 22px;
+        padding: 15px;
     }
     .options{
         width: 100%;
@@ -616,7 +624,7 @@ body{
     .resultBox{
         margin-top: 24px;
         width: 375px;
-        height: 500px;
+        /* height: 500px; */
     }
     .result{
         width: 340px;
@@ -636,9 +644,10 @@ body{
     }
     .textFinal{
         width: 340px;
-        height: 96px;
+        /* height: 96px; */
         font-size: 17px;
         line-height: 20px;
+        
     }
     .restartQuizz{
         width: 220.32px;
