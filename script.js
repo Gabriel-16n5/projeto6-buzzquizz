@@ -1,9 +1,14 @@
 let idQuizz;
 let quizzChosen={};
+let ans={};
 let levels = {};
 let numQuestions = 0;
 let score=0;
 let minLevel=0;
+let finalImage="";
+let finalText="";
+let finalTitle="";
+let finalScore=0;
 const page2 = document.querySelector(".page2");
 
 /* Para voltar a tela 1 */
@@ -19,6 +24,10 @@ function restartQuizz(){
     numQuestions = 0;
     score=0;
     minLevel=0;
+    minLevel=0;
+    finalImage="";
+    finalText="";
+    finalTitle="";
     
     getQuizz();
     /* a tela deverá ser scrollada novamente para o topo,  */
@@ -31,17 +40,18 @@ function restartQuizz(){
 
 /* Exibindo o resultado final */
 function finalResult(){
-    const finalScore = ((score / numQuestions) * 100).toFixed(0); 
+    finalScore = Number(((score / numQuestions) * 100).toFixed(0)); 
 
     /* Descobrindo o nível mínimo */
 
     for(let i=0; i<levels.length; i++){
-        
-        if(finalScore>levels[i].minValue && levels[i].minValue>minLevel){
-            minLevel=levels[i].minValue;
+
+        /* Para enquadrar a pontuação ao nível correto */
+        if(levels[i].minValue>=minLevel && levels[i].minValue <= finalScore){
+            minlevel = levels[i].minValue;
             finalImage=levels[i].image;
             finalText=levels[i].text;
-            finalTitle=levels[i].title;
+            finalTitle=levels[i].title; 
         }
     } 
 
@@ -115,7 +125,10 @@ function optionChosen(selected){
         }
     }    
 }
-
+/* Função para embaralhar as respostas */
+function comparador() { 
+    return Math.random() - 0.5; 
+}
 
 /* Abrindo o Quizz */
 function starting(resposta){
@@ -128,12 +141,19 @@ function starting(resposta){
     for(let i=0; i<numQuestions; i++){
         
         /* Para lançar as opções de cada questão do quizz */
-        let options="";
-        for (let j=0; j<quizzChosen.questions[i].answers.length; j++){
+        let ans = quizzChosen.questions[i].answers;
+        console.log(ans);
 
-            options +=`<div onclick="optionChosen(this)" id="${quizzChosen.questions[i].answers[j].isCorrectAnswer}" class="option">
-                    <img src=${quizzChosen.questions[i].answers[j].image}>
-                    <div class="nameOption">${quizzChosen.questions[i].answers[j].text}</div>
+        //para embaralhar as respostas
+        const newAns = ans.sort(comparador); 
+
+        console.log(newAns);
+        let options="";
+        for (let j=0; j<ans.length; j++){
+
+            options +=`<div onclick="optionChosen(this)" id="${newAns[j].isCorrectAnswer}" class="option">
+                    <img src=${newAns[j].image}>
+                    <div class="nameOption">${newAns[j].text}</div>
                 </div>
             `
         }
