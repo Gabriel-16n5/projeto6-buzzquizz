@@ -408,4 +408,8 @@ function page12to2(id){
     changeClass2.classList.remove('displayNone');
 }
 
+function verifyUserQuizz(){
+    
+}
+
 searchQuizz();
