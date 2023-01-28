@@ -126,20 +126,22 @@ function showQuizzToggle6(){
 //começo js página 1 Arthur//
 const contentScreenOne = document.querySelectorAll('.quizzes');
 let help = 1;  //váriavel que auxilia a seleção de id das imagens
+let validQuizz = ['2', '1', '989'];
 
 function searchQuizz(){ //essa função procura os quizzes, via um id aleatório que foi obtido no while
-    let k = 0;          //após isso ela aciona outras funções que tratam o erro ou mostra alguns dados do quizz na tela 1
+    let k = 1;          //após isso ela aciona outras funções que tratam o erro ou mostra alguns dados do quizz na tela 1
     let links = [];
     let aux = [];
     let text = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/';
     while(k < 6){
-        let r1 = Math.floor(Math.random() * 100);
+        let r1 = Math.floor(Math.random() * 1500 + 1);
         console.log(r1);
         text += `${r1}`
         links.push(text)
         text = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/';
         k += 1;
     }
+    links.push('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/18882');
     k = 0;
     while(k < 6){
         aux.push(axios.get(links[k]));
@@ -161,10 +163,39 @@ function process(api){          //adiciona elementos da api no html, esses eleme
     const array = api.data;
     for(let i = 0; i < 2; i ++){
         contentScreenOne[i].innerHTML += `
-        <img src="${array.image}" alt="">
+        <img onclick="page1${i + 1}to2(${array.id})" src="${array.image}" alt="">
         <div class="text" id="t${help}">${array.title}</div>
         `;
     }
     help += 1;
 }
+
+function page11to31(){
+    let changeClass1 = document.querySelector('.page1-1');
+    let changeClass2 = document.querySelector('.page3-1');
+    changeClass1.classList.add('displayNone');
+    changeClass2.classList.remove('displayNone');
+}
+
+function page12to31(){
+    let changeClass1 = document.querySelector('.page1-2');
+    let changeClass2 = document.querySelector('.page3-1');
+    changeClass1.classList.add('displayNone');
+    changeClass2.classList.remove('displayNone');
+}
+
+function page11to2(id){
+    let changeClass1 = document.querySelector('.page1-1');          //utiliza o id para dizer para a página 2 qual quiz vai ser utilizado
+    let changeClass2 = document.querySelector('.page2');
+    changeClass1.classList.add('displayNone');
+    changeClass2.classList.remove('displayNone');
+}
+
+function page12to2(id){
+    let changeClass1 = document.querySelector('.page1-2');          //utiliza o id para dizer para a página 2 qual quiz vai ser utilizado
+    let changeClass2 = document.querySelector('.page2');
+    changeClass1.classList.add('displayNone');
+    changeClass2.classList.remove('displayNone');
+}
+
 searchQuizz();

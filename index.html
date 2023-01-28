@@ -13,13 +13,13 @@
 </head>
 <body>
     <div class="Header">BuzzQuizz</div>
-    <div class="page1-1">
+    <div class="page1-1 displayNone">
         <div class="box">
             <div class="none">
                 <p>Você não criou nenhum quiz ainda :(</p>
             </div>
             <button class="createButton">
-                <div class="create">
+                <div class="create" onclick="page11to31()">
                     <p>Criar Quizz</p>
                 </div>
             </button>
@@ -31,10 +31,10 @@
             
         </div>
     </div>
-    <div class="page1-2 displayNone">
+    <div class="page1-2">
         <div class="yourQuizzes">
             <p>Seus Quizzes</p>
-            <button class="createButton"><ion-icon name="add-circle"></ion-icon></button>
+            <button class="createButton"><ion-icon name="add-circle" onclick="page12to31()"></ion-icon></button>
         </div>
         <div class="quiz">
             <img src="assets/castleBackgroud.png" alt="">
