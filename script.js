@@ -1,9 +1,191 @@
 // Começo dos scripts Gabriel //
+let createQuizzPage31 = {
+    title: '',
+    image: '',
+    questions: [
+		{
+			title: "",
+			color: "",
+			answers: [
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: true
+				},
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: false
+				},
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: false
+				},
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: false
+				}
+			]
+		},
+		{
+			title: "",
+			color: "",
+			answers: [
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: true
+				},
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: false
+				},
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: false
+				},
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: false
+				}
+			]
+		},
+		{
+			title: "",
+			color: "",
+			answers: [
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: true
+				},
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: false
+				},
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: false
+				},
+				{
+					text: "",
+					image: "",
+					isCorrectAnswer: false
+				}
+			]
+		}
+	],
+	levels: [
+		{
+			title: "",
+			image: "",
+			text: "",
+			minValue: 0
+		},
+		{
+			title: "",
+			image: "",
+			text: "",
+			minValue: 50
+		},
+		{
+			title: "",
+			image: "",
+			text: "",
+			minValue: 100
+		}
+	]
+}
+let minQuestionsQuizzNumber;
+let minLevelsQuizzNumber;
+function objectDataQuizz(){
+    createQuizzPage31.title = document.getElementById('quizzTitle').value;
+    createQuizzPage31.image = document.getElementById('quizzUrlImage').value;
+    minQuestionsQuizzNumber = document.getElementById('qtdQuestions').value;
+    minLevelsQuizzNumber = document.getElementById('qtdLevels').value;
+    //Question1
+    createQuizzPage31.questions[0].title = document.getElementById('q1AnswerText').value;
+    createQuizzPage31.questions[0].color = document.getElementById('bgColorAnswer').value;
+    //correct
+    createQuizzPage31.questions[0].answers[0].text = document.getElementById('q1CorrectAnswer').value;
+    createQuizzPage31.questions[0].answers[0].image = document.getElementById('q1CorrectAnswerUrl').value;
+    //Incorrect
+    createQuizzPage31.questions[0].answers[1].text = document.getElementById('q1IncorrectAnswer1').value;
+    createQuizzPage31.questions[0].answers[1].image = document.getElementById('q1IncorrectAnswerUrl1').value;
+    createQuizzPage31.questions[0].answers[2].text = document.getElementById('q1IncorrectAnswer2').value;
+    createQuizzPage31.questions[0].answers[2].image = document.getElementById('q1IncorrectAnswerUrl2').value;
+    createQuizzPage31.questions[0].answers[3].text = document.getElementById('q1IncorrectAnswer3').value;
+    createQuizzPage31.questions[0].answers[3].image = document.getElementById('q1IncorrectAnswerUrl3').value;
+    //Question2
+    createQuizzPage31.questions[1].title = document.getElementById('q2AnswerText').value;
+    createQuizzPage31.questions[1].color = document.getElementById('bgColorAnswer').value;
+    //correct
+    createQuizzPage31.questions[1].answers[0].text = document.getElementById('q2CorrectAnswer').value;
+    createQuizzPage31.questions[1].answers[0].image = document.getElementById('q2CorrectAnswerUrl').value;
+    //Incorrect
+    createQuizzPage31.questions[1].answers[1].text = document.getElementById('q2IncorrectAnswer1').value;
+    createQuizzPage31.questions[1].answers[1].image = document.getElementById('q2IncorrectAnswerUrl1').value;
+    createQuizzPage31.questions[1].answers[2].text = document.getElementById('q2IncorrectAnswer2').value;
+    createQuizzPage31.questions[1].answers[2].image = document.getElementById('q2IncorrectAnswerUrl2').value;
+    createQuizzPage31.questions[1].answers[3].text = document.getElementById('q2IncorrectAnswer3').value;
+    createQuizzPage31.questions[1].answers[3].image = document.getElementById('q2IncorrectAnswerUrl3').value;
+    //Question3
+    createQuizzPage31.questions[2].title = document.getElementById('q3AnswerText').value;
+    createQuizzPage31.questions[2].color = document.getElementById('bgColorAnswer').value;
+    //correct
+    createQuizzPage31.questions[2].answers[0].text = document.getElementById('q3CorrectAnswer').value;
+    createQuizzPage31.questions[2].answers[0].image = document.getElementById('q3CorrectAnswerUrl').value;
+    //Incorrect
+    createQuizzPage31.questions[2].answers[1].text = document.getElementById('q3IncorrectAnswer1').value;
+    createQuizzPage31.questions[2].answers[1].image = document.getElementById('q3IncorrectAnswerUrl1').value;
+    createQuizzPage31.questions[2].answers[2].text = document.getElementById('q3IncorrectAnswer2').value;
+    createQuizzPage31.questions[2].answers[2].image = document.getElementById('q3IncorrectAnswerUrl2').value;
+    createQuizzPage31.questions[2].answers[3].text = document.getElementById('q3IncorrectAnswer3').value;
+    createQuizzPage31.questions[2].answers[3].image = document.getElementById('q3IncorrectAnswerUrl3').value;
+    //Level1
+    createQuizzPage31.levels[0].title = document.getElementById('l1title').value;
+    createQuizzPage31.levels[0].image = document.getElementById('l1UrlImage').value;
+    createQuizzPage31.levels[0].text = document.getElementById('l1Descrition').value;
+    createQuizzPage31.levels[0].minValue = document.getElementById('l1%min').value;
+    //Level2
+    createQuizzPage31.levels[1].title = document.getElementById('l2title').value;
+    createQuizzPage31.levels[1].image = document.getElementById('l2UrlImage').value;
+    createQuizzPage31.levels[1].text = document.getElementById('l2Descrition').value;
+    createQuizzPage31.levels[1].minValue = document.getElementById('l2%min').value;
+    //Level3
+    createQuizzPage31.levels[2].title = document.getElementById('l3title').value;
+    createQuizzPage31.levels[2].image = document.getElementById('l3UrlImage').value;
+    createQuizzPage31.levels[2].text = document.getElementById('l3Descrition').value;
+    createQuizzPage31.levels[2].minValue = document.getElementById('l3%min').value;
+
+    if(createQuizzPage31.levels[2].text != 'Descrição do nível'){
+        sendQuizz();
+    }
+}
+
+function sendQuizz(){
+    const promisse = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', createQuizzPage31);
+    promisse.then(processAnswer);
+}
+
+function processAnswer(answer){
+    console.log(answer);
+}
+
 function page31to32(){
+    if(createQuizzPage31.title != ''&&createQuizzPage31.image != ''&&minQuestionsQuizzNumber >2&&minLevelsQuizzNumber >1&&minLevelsQuizzNumber != ''&&minQuestionsQuizzNumber != ''){
     let changeClass1 = document.querySelector('.page3-1');
     let changeClass2 = document.querySelector('.page3-2Full');
     changeClass1.classList.add('displayNone');
     changeClass2.classList.remove('displayNone');
+    }
 }
 
 function page32to33(){
@@ -121,6 +303,34 @@ function showQuizzToggle6(){
     for(let i = 0; i<temp.length;i++){
         temp[i].classList.add('displayNoneBolado11');
     }
+}
+
+function fillQuizzBasicInfo(box){
+    console.log(box)
+}
+
+function fillQuizzQuestion1(box){
+    console.log(box)
+}
+
+function fillQuizzQuestion2(box){
+    console.log(box)
+}
+
+function fillQuizzQuestion3(box){
+    console.log(box)
+}
+
+function fillQuizzLevel1(box){
+    console.log(box)
+}
+
+function fillQuizzLevel2(box){
+    console.log(box)
+}
+
+function fillQuizzLevel3(box){
+    console.log(box)
 }
 // FIM dos scripts Gabriel //
 //começo js página 1 Arthur//
