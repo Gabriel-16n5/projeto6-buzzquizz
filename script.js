@@ -179,27 +179,82 @@ function processAnswer(answer){
     console.log(answer);
 }
 
-function page31to32(){
+function validationPage31(){
     if(createQuizzPage31.title != ''&&createQuizzPage31.image != ''&&minQuestionsQuizzNumber >2&&minLevelsQuizzNumber >1&&minLevelsQuizzNumber != ''&&minQuestionsQuizzNumber != ''){
-    let changeClass1 = document.querySelector('.page3-1');
-    let changeClass2 = document.querySelector('.page3-2Full');
-    changeClass1.classList.add('displayNone');
-    changeClass2.classList.remove('displayNone');
+        page31to32('correct');
+    } else{
+        page31to32('incorrect');
     }
 }
 
-function page32to33(){
-    let changeClass1 = document.querySelector('.page3-2Full');
-    let changeClass2 = document.querySelector('.page3-3Full');
-    changeClass1.classList.add('displayNone');
-    changeClass2.classList.remove('displayNone');
+function page31to32(x){
+    if(x == "correct"){
+        let changeClass1 = document.querySelector('.page3-1');
+        let changeClass2 = document.querySelector('.page3-2Full');
+        changeClass1.classList.add('displayNone');
+        changeClass2.classList.remove('displayNone');
+    } else{
+        alert('Validação falhou, preencha novamente(se aparecer essa mensagem e estiver certo, tente novamente*BUG*)');
+    }
 }
 
-function page33to34(){
-    let changeClass1 = document.querySelector('.page3-3Full');
-    let changeClass2 = document.querySelector('.page3-4Full');
-    changeClass1.classList.add('displayNone');
-    changeClass2.classList.remove('displayNone');
+function validationPage32(){
+    if(createQuizzPage31.questions[0].title != ''&&createQuizzPage31.questions[0].color[0] == '#'
+    &&createQuizzPage31.questions[0].answers[0].text != ''&&createQuizzPage31.questions[0].answers[0].image != ''
+    &&createQuizzPage31.questions[0].answers[1].text != ''&&createQuizzPage31.questions[0].answers[1].image !== ''
+    &&createQuizzPage31.questions[0].answers[2].text != ''&&createQuizzPage31.questions[0].answers[2].image !== ''
+    &&createQuizzPage31.questions[0].answers[3].text != ''&&createQuizzPage31.questions[0].answers[3].image !== ''
+    //
+    &&createQuizzPage31.questions[1].title != ''&&createQuizzPage31.questions[1].color[0] == '#'
+    &&createQuizzPage31.questions[1].answers[0].text != ''&&createQuizzPage31.questions[1].answers[0].image != ''
+    &&createQuizzPage31.questions[1].answers[1].text != ''&&createQuizzPage31.questions[1].answers[1].image !== ''
+    &&createQuizzPage31.questions[1].answers[2].text != ''&&createQuizzPage31.questions[1].answers[2].image !== ''
+    &&createQuizzPage31.questions[1].answers[3].text != ''&&createQuizzPage31.questions[1].answers[3].image !== ''
+    //
+    &&createQuizzPage31.questions[2].title != ''&&createQuizzPage31.questions[2].color[0] == '#'
+    &&createQuizzPage31.questions[2].answers[0].text != ''&&createQuizzPage31.questions[2].answers[0].image != ''
+    &&createQuizzPage31.questions[2].answers[1].text != ''&&createQuizzPage31.questions[2].answers[1].image !== ''
+    &&createQuizzPage31.questions[2].answers[2].text != ''&&createQuizzPage31.questions[2].answers[2].image !== ''
+    &&createQuizzPage31.questions[2].answers[3].text != ''&&createQuizzPage31.questions[2].answers[3].image !== ''
+    ){
+        page32to33('correct');
+    } else{
+        page32to33('incorrect');
+    }
+}
+
+function page32to33(x){
+    if(x == 'correct'){
+        let changeClass1 = document.querySelector('.page3-2Full');
+        let changeClass2 = document.querySelector('.page3-3Full');
+        changeClass1.classList.add('displayNone');
+        changeClass2.classList.remove('displayNone');
+    } else{
+        alert('Validação falhou, preencha novamente(se aparecer essa mensagem e estiver certo, tente novamente*BUG*)');
+    }
+}
+
+function validationPage33(){
+    if(createQuizzPage31.levels[0].title != ''&&createQuizzPage31.levels[0].image != ''&&createQuizzPage31.levels[0].text != ''&&createQuizzPage31.levels[0].minValue < 101
+    &&createQuizzPage31.levels[1].title != ''&&createQuizzPage31.levels[1].image != ''&&createQuizzPage31.levels[1].text != ''&&createQuizzPage31.levels[1].minValue < 101
+    &&createQuizzPage31.levels[2].title != ''&&createQuizzPage31.levels[2].image != ''&&createQuizzPage31.levels[2].text != ''&&createQuizzPage31.levels[2].minValue < 101
+    ){
+        page33to34('correct');
+    } else{
+        page33to34('incorrect');
+    }
+}
+
+function page33to34(x){
+    if(x == 'correct'){
+        let changeClass1 = document.querySelector('.page3-3Full');
+        let changeClass2 = document.querySelector('.page3-4Full');
+        changeClass1.classList.add('displayNone');
+        changeClass2.classList.remove('displayNone');
+    } else{
+        alert('Validação falhou, preencha novamente(se aparecer essa mensagem e estiver certo, tente novamente*BUG*)');
+    }
+
 }
 
 function page34to21(){
