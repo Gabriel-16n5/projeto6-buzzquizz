@@ -103,6 +103,14 @@ body{
     position: relative;
 }
 
+.fade{
+    position: absolute;
+    
+    width: 340px;
+    height: 181px;
+}
+
+
 .text{
     width: 301px;
     height: 54px;
@@ -113,6 +121,8 @@ body{
     display: flex;
     align-items: center;
     position: absolute;
+    word-wrap: break-word;
+    /*background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);*/    
 }
 
 #t1{
@@ -182,6 +192,20 @@ body{
 .yourQuizzes button{
     width: 31px;
     height: 30px;
+}
+
+.quiz{
+    margin-left: 194px;
+    float:left;
+}
+
+.quiz img{
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-right: 15px;
+    position: relative;
 }
 
 .createButton ion-icon{
@@ -398,6 +422,7 @@ body{
     box-sizing: border-box;
     border: 1px solid #D1D1D1;
     border-radius: 5px;
+    margin-top: 5px;
 }
 
 .quizzText{
@@ -427,6 +452,14 @@ body{
     background-color: #EC362D;
 }
 
+.textButtonP31{
+    font-size: 21px;
+    font-family:'Roboto';
+    font-weight: 400;
+    color: #fff5f4;
+    line-height: 25px;
+}
+
 .textButton{
     font-size: 21px;
     font-weight: 400;
@@ -436,6 +469,30 @@ body{
 
 .displayNone{
     display:none;
+}
+
+.displayNoneBolado1{
+    display:none !important;
+}
+
+.displayNoneBolado3{
+    display:none !important;
+}
+
+.displayNoneBolado5{
+    display:none !important;
+}
+
+.displayNoneBolado7{
+    display:none !important;
+}
+
+.displayNoneBolado9{
+    display:none !important;
+}
+
+.displayNoneBolado11{
+    display:none !important;
 }
 /*FIM de Todo conteúdo da tela 3.1*/
 
@@ -485,15 +542,39 @@ body{
     background-color: #EC362D;
 }
 
+#quizzBoxB{
+    width: 601px;
+    height: 74px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    background-color:#FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
 /*FIM de Todo conteúdo da tela 3.2*/
 
 /*Começo de Todo conteúdo da tela 3.3*/
 
 .page3-3{
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    background-color:#FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 80px;
 }
 
 .quizzBoxPage3-3{
