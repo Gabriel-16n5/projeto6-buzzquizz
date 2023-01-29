@@ -388,6 +388,7 @@ function fillQuizzLevel3(box){
     console.log(box)
 }
 // FIM dos scripts Gabriel //
+
 //começo js página 1 Arthur//
 const contentScreenOne = document.querySelectorAll('.quizzes');
 let help = 1;  //váriavel que auxilia a seleção de id das imagens
@@ -536,14 +537,16 @@ function finalResult(){
     /* Descobrindo o nível mínimo */
 
     for(let i=0; i<levels.length; i++){
-
+        
         /* Para enquadrar a pontuação ao nível correto */
         if(levels[i].minValue>=minLevel && levels[i].minValue <= finalScore){
-            minlevel = levels[i].minValue;
+            
+            minLevel = levels[i].minValue;
             finalImage=levels[i].image;
             finalText=levels[i].text;
             finalTitle=levels[i].title; 
         }
+      
     } 
 
     page2.innerHTML += `
@@ -633,12 +636,10 @@ function starting(resposta){
         
         /* Para lançar as opções de cada questão do quizz */
         let ans = quizzChosen.questions[i].answers;
-        console.log(ans);
-
+        
         //para embaralhar as respostas
         const newAns = ans.sort(comparador); 
 
-        console.log(newAns);
         let options="";
         for (let j=0; j<ans.length; j++){
 
