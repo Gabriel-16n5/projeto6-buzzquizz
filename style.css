@@ -262,6 +262,8 @@ body{
     width: 100%;
     height: 142px;
     /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(fundo.png);   */
+    background-size: cover;
+    background-position: center;
     font-weight: 400;
     font-size: 39px;
     line-height: 46px;
@@ -270,6 +272,9 @@ body{
     align-items: center;
     text-align: center;
     color: #FFFFFF;
+}
+.quizzName img{
+    width: 100%;
 }
 .questionBox{
     display: flex;
@@ -341,6 +346,7 @@ body{
     height: 99px;
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: center;
     background: #EC362D;
     color: #FFFFFF;
@@ -348,8 +354,6 @@ body{
     font-size: 23px;
     line-height: 27px;
     display: flex;
-    align-items: center;
-    text-align: center;
     padding: 22px 16px;
     /* word-break: break-all; */
 }
@@ -365,6 +369,9 @@ body{
 }
 .textFinal{
     display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     flex-wrap: wrap;
     word-wrap: break-word;
     width: 328px;
@@ -374,7 +381,6 @@ body{
     line-height: 25px;
     color: #484848;
     padding-bottom: 15px;
-    /* word-break: break-all; */
 }
 .restartQuizz{
     width: 260.38px;
