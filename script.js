@@ -598,7 +598,6 @@ function optionChosen(selected){
         selected.classList.remove('notChosen')
 
         /* contabilizando os pontos */
-        console.log(selected.id);
         if(selected.id === "true"){
             score+=1;
         }
