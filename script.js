@@ -373,8 +373,10 @@ function process(api){          //adiciona elementos da api no html, esses eleme
     const array = api.data;
     for(let i = 0; i < 2; i ++){
         contentScreenOne[i].innerHTML += `
-        <img onclick="page1${i + 1}to2(${array.id})" src="${array.image}" alt="">
-        <div class="text" id="t${help}">${array.title}</div>
+        <div onclick="page1${i + 1}to2(${array.id})" class="fade" id="fade${help}"></div>
+            <img onclick="page1${i + 1}to2(${array.id})" src="${array.image}" alt="">
+            <div class="text" id="t${help}">${array.title}</div>
+        
         `;
     }
     help += 1;
@@ -408,8 +410,25 @@ function page12to2(id){
     changeClass2.classList.remove('displayNone');
 }
 
-function verifyUserQuizz(){
-    
+function setInitialPage11(){
+    let setClass = document.querySelector('.page1-1');
+    setClass.classList.remove('displayNone');
 }
 
-searchQuizz();
+function setInitialPage12(){
+    let setClass = document.querySelector('.page1-2');
+    setClass.classList.remove('displayNone');
+}
+
+function verifyUserQuizz(){
+    const exists = localStorage.getItem('title');
+    console.log(exists);
+    searchQuizz();
+    if(exists == null){
+        setInitialPage11();
+    }else{
+        setInitialPage12();
+    }
+}
+
+verifyUserQuizz();
