@@ -105,6 +105,8 @@ let createQuizzPage31 = {
 }
 let minQuestionsQuizzNumber;
 let minLevelsQuizzNumber;
+
+
 function objectDataQuizz(){
     createQuizzPage31.title = document.getElementById('quizzTitle').value;
     createQuizzPage31.image = document.getElementById('quizzUrlImage').value;
@@ -165,7 +167,11 @@ function objectDataQuizz(){
     createQuizzPage31.levels[2].text = document.getElementById('l3Descrition').value;
     createQuizzPage31.levels[2].minValue = document.getElementById('l3%min').value;
 
-    if(createQuizzPage31.levels[2].text != 'Descrição do nível'){
+    if(createQuizzPage31.levels[2].text != ''){
+        changeImgEndQuizz = document.getElementById('endQuizz');
+        changeImgEndQuizz.setAttribute("src", createQuizzPage31.image);
+        changeTextEndQuizz = document.getElementById('endQuizzText');
+        changeTextEndQuizz.innerHTML = createQuizzPage31.title;
         sendQuizz();
     }
 }
@@ -180,7 +186,8 @@ function processAnswer(answer){
 }
 
 function validationPage31(){
-    if(createQuizzPage31.title != ''&&createQuizzPage31.image != ''&&minQuestionsQuizzNumber >2&&minLevelsQuizzNumber >1&&minLevelsQuizzNumber != ''&&minQuestionsQuizzNumber != ''){
+    if(createQuizzPage31.title != ''&&createQuizzPage31.image != ''&&minQuestionsQuizzNumber >2
+    &&minLevelsQuizzNumber >1&&minLevelsQuizzNumber != ''&&minQuestionsQuizzNumber != ''){
         page31to32('correct');
     } else{
         page31to32('incorrect');
@@ -260,6 +267,13 @@ function page33to34(x){
 function page34to21(){
     let changeClass1 = document.querySelector('.page3-4Full');
     let changeClass2 = document.querySelector('.page2');
+    changeClass1.classList.add('displayNone');
+    changeClass2.classList.remove('displayNone');
+}
+
+function page34to11(){
+    let changeClass1 = document.querySelector('.page3-4Full');
+    let changeClass2 = document.querySelector('.page1-1');
     changeClass1.classList.add('displayNone');
     changeClass2.classList.remove('displayNone');
 }

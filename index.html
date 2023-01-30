@@ -114,7 +114,9 @@
                     <div class="quizzQuestion"><input class="quizzText" type="number" id="qtdQuestions" min="3" placeholder="Quantidade de perguntas do quizz (mínimo 3)"></div>
                     <div class="quizzQuestion"><input class="quizzText" type="number" id="qtdLevels" min="2"  placeholder="Quantidade de níveis do quizz (mínimo 2)"></div>
             </div>
-            <button onclick="validationPage31()" class="page3-1ToPage3-2"><p class="textButtonP31">Prosseguir pra criar perguntas</p></button>
+                 <div class="page3-1"><button onclick = "setTimeout(validationPage31, 200)" class="page3-1ToPage3-2 "><p class="textButtonP31">Prosseguir pra criar perguntas</p></button>
+            </div>
+            
         </form>
     </div>
     <div class="page3-2Full displayNone">
@@ -205,12 +207,13 @@
                         <div class="quizzQuestion"><input class="quizzText" type="url" id="q3IncorrectAnswerUrl3" placeholder="URL da imagem 3"></div>
                     </div>
                 </div>
-            
-                <button onclick="validationPage32()" class="page3-2ToPage3-3"><p class="textButton">Prosseguir pra criar níveis</p></button>
+                <div class="page3-2">
+                    <button onclick = "setTimeout(validationPage32, 200)" class="page3-2ToPage3-3"><p class="textButton">Prosseguir pra criar níveis</p></button>
+                </div>
             </form>
         </div>
     </div>
-    <div class="page3-3Full ">
+    <div class="page3-3Full displayNone">
         <div class="page3-3">
             <h1 class="titlePage">Agora, decida os níveis</h1>
             <form action="#" onsubmit="objectDataQuizz();return false">
@@ -250,19 +253,20 @@
                         <div class="quizzQuestion-3"><input class="quizzText" type="text" minlength="30" id="l3Descrition" placeholder="Descrição do nível"></div>
                     </div>
                 </div>
-        
-                 <button onclick="validationPage33()" class="page3-3ToPage3-4"><p class="textButton">Finalizar Quizz</p></button>
+                <div class="page3-2">
+                    <button onclick = "setTimeout(validationPage33, 200)" class="page3-3ToPage3-4"><p class="textButton">Finalizar Quizz</p></button>
+                </div>
             </form>
         </div>
     </div>
-    <div class="page3-4Full displayNone">
+    <div class="page3-4Full ">
         <div class="page3-4">
             <h1 class="titlePage">Seu quizz está pronto!</h1>
             <div class="quizzDoneCreated">
-                <div><img src="assets\castleBackgroud.png" alt="O quão Potterhead é você?"><p>O quão Potterhead é você?</p></div>
+                <div><img id="endQuizz" src="" alt=""><p id="endQuizzText" class="titlePage"></p></div>
             </div>
             <button onclick="page34to21()" class="accessQuizz"><p class="textButton">Acessar Quizz</p></button>
-            <button class="backToHome"><p class="textButtonHome">Voltar pra home</p></button>
+            <button onclick="page34to11()" class="goHome"><p class="textButtonHome">Voltar pra home</p></button>
         </div>
     </div>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
