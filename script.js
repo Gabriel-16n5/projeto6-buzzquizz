@@ -412,7 +412,11 @@ function fillQuizzLevel3(box){
 const contentScreenOne = document.querySelectorAll('.quizzes');
 const contentScreenTwo = document.querySelector('.quiz')
 let help = 1;  //váriavel que auxilia a seleção de id das imagens
+<<<<<<< HEAD
 let validQuizz = ['2', '1', '989', '19022', '19937', '19964'];
+=======
+let validQuizz = ['2', '1', '989', '19022', '19937', '19355', '19729'];
+>>>>>>> 08c85b3a2d3325a7a1ad488f849b3cce36080680
 let isTrue = true;
 
 function searchQuizz(){ //essa função procura os quizzes, via um id aleatório que foi obtido no while
@@ -672,7 +676,6 @@ function optionChosen(selected){
         selected.classList.remove('notChosen')
 
         /* contabilizando os pontos */
-        console.log(selected.id);
         if(selected.id === "true"){
             score+=1;
         }
