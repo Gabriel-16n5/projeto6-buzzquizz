@@ -445,24 +445,28 @@ function searchQuizz(){ //essa função procura os quizzes, via um id aleatório
     }
     let linksuser = [];
     k = 0;
-    while (k < userQuizzId.length){
-        text += `${userQuizzId[k]}`
-        linksuser.push(text);
-        text = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/';
-        k += 1;
+    console.log(userQuizzId);
+    if(userQuizzId != null){
+        while (k < userQuizzId.length){
+            text += `${userQuizzId[k]}`
+            linksuser.push(text);
+            text = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/';
+            k += 1;
+        }
+        k = 0;
+        s2 = [];
+        while(k < userQuizzId.length){
+            s2.push(axios.get(linksuser[k]));
+            k += 1;
+        }
+        k = 0;
+        while(k < userQuizzId.length){
+            s2[k].then(process1);
+            s2[k].then(errorProcess);
+            k += 1;
+        }
     }
-    k = 0;
-    s2 = [];
-    while(k < userQuizzId.length){
-        s2.push(axios.get(linksuser[k]));
-        k += 1;
-    }
-    k = 0;
-    while(k < userQuizzId.length){
-        s2[k].then(process1);
-        s2[k].then(errorProcess);
-        k += 1;
-    }
+    
 }
 
 function errorProcess(error){   // trata qualquer tipo de erro que possa acontecer na troca de informações da api e mostra no console.log
