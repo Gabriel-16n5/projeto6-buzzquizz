@@ -105,8 +105,10 @@ let createQuizzPage31 = {
 }
 let minQuestionsQuizzNumber;
 let minLevelsQuizzNumber;
-
-
+let justAHolder = {};
+let userQuizzId = [];
+let serialId = [];
+userQuizzId = localStorage.getItem("id");
 function objectDataQuizz(){
     createQuizzPage31.title = document.getElementById('quizzTitle').value;
     createQuizzPage31.image = document.getElementById('quizzUrlImage').value;
@@ -182,7 +184,10 @@ function sendQuizz(){
 }
 
 function processAnswer(answer){
-    console.log(answer);
+    justAHolder = answer;
+    serialId = JSON.stringify(justAHolder.data.id);
+    localStorage.setItem('id', serialId);
+    userQuizzId.push = localStorage.getItem("id");
 }
 
 function validationPage31(){
@@ -201,7 +206,7 @@ function page31to32(x){
         changeClass1.classList.add('displayNone');
         changeClass2.classList.remove('displayNone');
     } else{
-        alert('Validação falhou, preencha novamente(se aparecer essa mensagem e estiver certo, tente novamente*BUG*)');
+        alert('Validação falhou, preencha novamente');
     }
 }
 
@@ -237,7 +242,7 @@ function page32to33(x){
         changeClass1.classList.add('displayNone');
         changeClass2.classList.remove('displayNone');
     } else{
-        alert('Validação falhou, preencha novamente(se aparecer essa mensagem e estiver certo, tente novamente*BUG*)');
+        alert('Validação falhou, preencha novamente');
     }
 }
 
@@ -259,7 +264,7 @@ function page33to34(x){
         changeClass1.classList.add('displayNone');
         changeClass2.classList.remove('displayNone');
     } else{
-        alert('Validação falhou, preencha novamente(se aparecer essa mensagem e estiver certo, tente novamente*BUG*)');
+        alert('Validação falhou, preencha novamente');
     }
 
 }
