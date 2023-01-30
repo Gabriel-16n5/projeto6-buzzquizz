@@ -1,7 +1,7 @@
 *{box-sizing: border-box}
 
 body{
-    width: 1440px;
+    width: 100%;
     height: 1024px;
     background-color: #FAFAFA;
     font-family: 'Roboto';
@@ -90,6 +90,7 @@ body{
 }
 
 .quizzes{
+    width: 1051px;
     margin-left: 194px;
     float:left;
 }
@@ -256,12 +257,10 @@ body{
     align-items: center;
     justify-content: center;
     padding-bottom: 300px;
-    
 }
 .quizzName{
     width: 100%;
     height: 142px;
-    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(fundo.png);   */
     background-size: cover;
     background-position: center;
     font-weight: 400;
@@ -696,8 +695,9 @@ body{
 /* Mobile */
 @media(max-width:1100px) {
 
-    body{
-        width: 100%;
+    .page2{
+        justify-content: center;
+        align-items: center;
     }
     .quizzName{
         font-size: 19px;
@@ -781,7 +781,7 @@ body{
         line-height: 25px;
     }
 
-    .titlePage{
+/*     .titlePage{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -792,7 +792,7 @@ body{
         font-weight: 700;
         color: #000000;
         line-height: 27px;
-    }
+    } */
 
     .insideQuestionQuizz{
         width: 95%;
@@ -805,7 +805,7 @@ body{
         line-height: 23px;
     }
 
-    .quizzText{
+/*     .quizzText{
         display: flex;
         justify-content: start;
         align-items: center;
@@ -817,6 +817,125 @@ body{
         color: #bababa;
         line-height: 22px;
         font-style: italic;
+    } */
+    .box{
+        width: 340px;
+        position: relative;
+        margin-left: 0px;
+    }
+    .none{
+        margin-left: 45px;
+    }
+    .create{
+        margin-left: 95.16px;
     }
 
+    .yourQuizzes{
+        width: 340px;
     }
+
+    .quiz{
+        width: 340px;
+        margin-left: 0px;
+    }
+    .yourQuizzes p{
+        margin-right: 50%;
+        margin-left: -28%;
+    }
+    #t7{
+        margin-top: 38px;
+    }
+
+    .createButton ion-icon{
+        margin-left: 52%;
+    }
+
+    .page1-1{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .page1-2{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .all{
+        margin-top: 35px;
+        margin-left: 0px;
+        left: -8%;
+    }
+    #fix{
+        margin-top: 14px;
+        margin-left: 0px;
+        align-items: center;
+        justify-content: center;
+        display: block;
+        width: 340px;
+    }
+    #t1, #t2, #t3, #t4, #t5, #t6{
+        margin-top: -35px;
+        margin-left: 170px;
+        transform: translate(-50%, -50%);
+        -index: 10;
+    }
+    #fade2{
+        margin-left:auto;
+        margin-top: 21px;
+    }
+
+    #fade3{
+        margin-left:auto;
+        margin-top: 21px;
+    }
+
+
+    #fade5{
+        margin-left:auto;
+        margin-top: 21px;
+    }
+
+    #fade6{
+        margin-left:auto;
+        margin-top: 21px;
+    }
+    #screen2{
+        margin-top: 14px;
+        margin-left: 0px;
+        align-items: center;
+        justify-content: center;
+        display: block;
+        width: 340px;
+    }
+
+    /* tela3 */
+    .titlePage{
+        margin-top: 37px;
+        margin-bottom: 29px;
+        font-size: 20px;
+        line-height: 23px;
+    }
+    .quizzBox{
+        width: 100%;
+        padding: 22px 16px;
+    }
+    .quizzText{
+        width: 100%;
+    }
+    .quizzQuestion{
+        margin-bottom: 9px;
+        width: 100%;
+    }
+    .page3-1ToPage3-2{
+        width: 324px;
+        height: 54px;
+        margin-top: 29px;
+    }
+
+}
+
+
+
+

@@ -406,7 +406,7 @@ function fillQuizzLevel3(box){
 //começo js página 1 Arthur//
 const contentScreenOne = document.querySelectorAll('.quizzes');
 let help = 1;  //váriavel que auxilia a seleção de id das imagens
-let validQuizz = ['2', '1', '989', '19022'];
+let validQuizz = ['2', '1', '989', '19022', '19355', '19729'];
 let isTrue = true;
 
 function searchQuizz(){ //essa função procura os quizzes, via um id aleatório que foi obtido no while
