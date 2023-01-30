@@ -406,7 +406,7 @@ function fillQuizzLevel3(box){
 //começo js página 1 Arthur//
 const contentScreenOne = document.querySelectorAll('.quizzes');
 let help = 1;  //váriavel que auxilia a seleção de id das imagens
-let validQuizz = ['2', '1', '989', '19022'];
+let validQuizz = ['2', '1', '989', '19022', '19937'];
 let isTrue = true;
 
 function searchQuizz(){ //essa função procura os quizzes, via um id aleatório que foi obtido no while
@@ -422,7 +422,7 @@ function searchQuizz(){ //essa função procura os quizzes, via um id aleatório
         text = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/';
         k += 1;
     }
-    links.push('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/18882');
+    links.push('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/19937');
     k = 0;
     while(k < 6){
         aux.push(axios.get(links[k]));
