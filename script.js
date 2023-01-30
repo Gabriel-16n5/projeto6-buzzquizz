@@ -410,14 +410,16 @@ function fillQuizzLevel3(box){
 
 //começo js página 1 Arthur//
 const contentScreenOne = document.querySelectorAll('.quizzes');
+const contentScreenTwo = document.querySelector('.quiz')
 let help = 1;  //váriavel que auxilia a seleção de id das imagens
-let validQuizz = ['2', '1', '989', '19022', '19937'];
+let validQuizz = ['2', '1', '989', '19022', '19937', '19964'];
 let isTrue = true;
 
 function searchQuizz(){ //essa função procura os quizzes, via um id aleatório que foi obtido no while
     let k = 1;          //após isso ela aciona outras funções que tratam o erro ou mostra alguns dados do quizz na tela 1
     let links = [];
     let aux = [];
+    let aux3 = [];
     let text = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/';
     while(k < 6){
         let r1 = Math.floor(Math.random() * 1500 + 1);
@@ -439,6 +441,26 @@ function searchQuizz(){ //essa função procura os quizzes, via um id aleatório
         aux[k].catch(errorProcess);
         k += 1;
     }
+    let linksuser = [];
+    k = 0;
+    while (k < userQuizzId.length){
+        text += `${userQuizzId[k]}`
+        linksuser.push(text);
+        text = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/';
+        k += 1;
+    }
+    k = 0;
+    s2 = [];
+    while(k < userQuizzId.length){
+        s2.push(axios.get(linksuser[k]));
+        k += 1;
+    }
+    k = 0;
+    while(k < userQuizzId.length){
+        s2[k].then(process1);
+        s2[k].then(errorProcess);
+        k += 1;
+    }
 }
 
 function errorProcess(error){   // trata qualquer tipo de erro que possa acontecer na troca de informações da api e mostra no console.log
@@ -450,12 +472,22 @@ function process(api){          //adiciona elementos da api no html, esses eleme
     for(let i = 0; i < 2; i ++){
         contentScreenOne[i].innerHTML += `
         <div onclick="page1${i + 1}to2(${array.id})" class="fade" id="fade${help}"></div>
-            <img onclick="page1${i + 1}to2(${array.id})" src="${array.image}" alt="">
-            <div class="text" id="t${help}">${array.title}</div>
+        <img onclick="page1${i + 1}to2(${array.id})" src="${array.image}" alt="">
+        <div class="text" id="t${help}">${array.title}</div>
         
         `;
     }
     help += 1;
+}
+let helper = 1;
+
+function process1(api){
+    const array = api.data;
+    debugger;
+    contentScreenTwo.innerHTML += `
+    <img src="${array.image}" alt="">
+    <div class="text" id="t${helper}">${array.title}</div>`;
+    helper += 1;
 }
 
 function page11to31(){
@@ -499,10 +531,9 @@ function setInitialPage12(){
 }
 
 function verifyUserQuizz(){
-    const exists = localStorage.getItem('title');
-    console.log(exists);
+    console.log(userQuizzId);
     searchQuizz();
-    if(exists == null){
+    if(userQuizzId == null){
         setInitialPage11();
         isTrue = true;
     }else{
@@ -523,7 +554,6 @@ let finalTitle="";
 let finalScore=0;
 const page2 = document.querySelector(".page2");
 
-/* Para voltar a tela 1 */
 function gohome(){
     let changeClass1 = document.querySelector('.page2');
     if(isTrue === true){
