@@ -26,7 +26,8 @@ body{
 
 .box{
     margin-top: 77px;
-    margin-left: 194px;
+    margin-left: 13.4%;
+    margin-right: 13.4%;
     display: flex;
     flex-direction: column;
     width: 1051px;
@@ -78,7 +79,7 @@ body{
 }
 
 .all{
-    margin-left: 194px;
+    margin-left: 13.4%;
     margin-top: 77px;
     position: relative;
 }
@@ -90,8 +91,7 @@ body{
 }
 
 .quizzes{
-    width: 1051px;
-    margin-left: 194px;
+    margin-left: 13.4%;
     float:left;
 }
 
@@ -830,6 +830,18 @@ body{
         margin-left: 95.16px;
     }
 
+    .box{
+        width: 340px;
+        position: relative;
+        margin-left: 0px;
+    }
+    .none{
+        margin-left: 45px;
+    }
+    .create{
+        margin-left: 95.16px;
+    }
+
     .yourQuizzes{
         width: 340px;
     }
@@ -885,18 +897,18 @@ body{
         margin-left:auto;
         margin-top: 21px;
     }
-
+    
     #fade3{
         margin-left:auto;
         margin-top: 21px;
     }
-
-
+    
+    
     #fade5{
         margin-left:auto;
         margin-top: 21px;
     }
-
+    
     #fade6{
         margin-left:auto;
         margin-top: 21px;
@@ -910,32 +922,4 @@ body{
         width: 340px;
     }
 
-    /* tela3 */
-    .titlePage{
-        margin-top: 37px;
-        margin-bottom: 29px;
-        font-size: 20px;
-        line-height: 23px;
-    }
-    .quizzBox{
-        width: 100%;
-        padding: 22px 16px;
-    }
-    .quizzText{
-        width: 100%;
-    }
-    .quizzQuestion{
-        margin-bottom: 9px;
-        width: 100%;
-    }
-    .page3-1ToPage3-2{
-        width: 324px;
-        height: 54px;
-        margin-top: 29px;
-    }
-
 }
-
-
-
-

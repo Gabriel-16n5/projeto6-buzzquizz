@@ -105,8 +105,10 @@ let createQuizzPage31 = {
 }
 let minQuestionsQuizzNumber;
 let minLevelsQuizzNumber;
-
-
+let justAHolder = {};
+let userQuizzId = [];
+let serialId = [];
+userQuizzId = localStorage.getItem("id");
 function objectDataQuizz(){
     createQuizzPage31.title = document.getElementById('quizzTitle').value;
     createQuizzPage31.image = document.getElementById('quizzUrlImage').value;
@@ -182,7 +184,10 @@ function sendQuizz(){
 }
 
 function processAnswer(answer){
-    console.log(answer);
+    justAHolder = answer;
+    serialId = JSON.stringify(justAHolder.data.id);
+    localStorage.setItem('id', serialId);
+    userQuizzId.push = localStorage.getItem("id");
 }
 
 function validationPage31(){
@@ -201,7 +206,7 @@ function page31to32(x){
         changeClass1.classList.add('displayNone');
         changeClass2.classList.remove('displayNone');
     } else{
-        alert('Validação falhou, preencha novamente(se aparecer essa mensagem e estiver certo, tente novamente*BUG*)');
+        alert('Validação falhou, preencha novamente');
     }
 }
 
@@ -237,7 +242,7 @@ function page32to33(x){
         changeClass1.classList.add('displayNone');
         changeClass2.classList.remove('displayNone');
     } else{
-        alert('Validação falhou, preencha novamente(se aparecer essa mensagem e estiver certo, tente novamente*BUG*)');
+        alert('Validação falhou, preencha novamente');
     }
 }
 
@@ -259,7 +264,7 @@ function page33to34(x){
         changeClass1.classList.add('displayNone');
         changeClass2.classList.remove('displayNone');
     } else{
-        alert('Validação falhou, preencha novamente(se aparecer essa mensagem e estiver certo, tente novamente*BUG*)');
+        alert('Validação falhou, preencha novamente');
     }
 
 }
@@ -406,7 +411,7 @@ function fillQuizzLevel3(box){
 //começo js página 1 Arthur//
 const contentScreenOne = document.querySelectorAll('.quizzes');
 let help = 1;  //váriavel que auxilia a seleção de id das imagens
-let validQuizz = ['2', '1', '989', '19022', '19355', '19729'];
+let validQuizz = ['2', '1', '989', '19022', '19937', '19355', '19729'];
 let isTrue = true;
 
 function searchQuizz(){ //essa função procura os quizzes, via um id aleatório que foi obtido no while
@@ -422,7 +427,7 @@ function searchQuizz(){ //essa função procura os quizzes, via um id aleatório
         text = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/';
         k += 1;
     }
-    links.push('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/18882');
+    links.push('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/19937');
     k = 0;
     while(k < 6){
         aux.push(axios.get(links[k]));
