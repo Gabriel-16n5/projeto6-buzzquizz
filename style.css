@@ -812,4 +812,96 @@ body{
         font-style: italic;
     }
 
+    .box{
+        width: 340px;
+        position: relative;
+        margin-left: 0px;
     }
+    .none{
+        margin-left: 45px;
+    }
+    .create{
+        margin-left: 95.16px;
+    }
+
+    .yourQuizzes{
+        width: 340px;
+    }
+
+    .quiz{
+        width: 340px;
+        margin-left: 0px;
+    }
+    .yourQuizzes p{
+        margin-right: 50%;
+        margin-left: -28%;
+    }
+    #t7{
+        margin-top: 38px;
+    }
+
+    .createButton ion-icon{
+        margin-left: 52%;
+    }
+
+    .page1-1{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .page1-2{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .all{
+        margin-top: 35px;
+        margin-left: 0px;
+        left: -8%;
+    }
+    #fix{
+        margin-top: 14px;
+        margin-left: 0px;
+        align-items: center;
+        justify-content: center;
+        display: block;
+        width: 340px;
+    }
+    #t1, #t2, #t3, #t4, #t5, #t6{
+        margin-top: -35px;
+        margin-left: 170px;
+        transform: translate(-50%, -50%);
+        -index: 10;
+    }
+    #fade2{
+        margin-left:auto;
+        margin-top: 21px;
+    }
+    
+    #fade3{
+        margin-left:auto;
+        margin-top: 21px;
+    }
+    
+    
+    #fade5{
+        margin-left:auto;
+        margin-top: 21px;
+    }
+    
+    #fade6{
+        margin-left:auto;
+        margin-top: 21px;
+    }
+    #screen2{
+        margin-top: 14px;
+        margin-left: 0px;
+        align-items: center;
+        justify-content: center;
+        display: block;
+        width: 340px;
+    }
+
+}
