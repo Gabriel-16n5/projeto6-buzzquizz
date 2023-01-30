@@ -393,6 +393,7 @@ function fillQuizzLevel3(box){
 const contentScreenOne = document.querySelectorAll('.quizzes');
 let help = 1;  //váriavel que auxilia a seleção de id das imagens
 let validQuizz = ['2', '1', '989', '19022'];
+let isTrue = true;
 
 function searchQuizz(){ //essa função procura os quizzes, via um id aleatório que foi obtido no while
     let k = 1;          //após isso ela aciona outras funções que tratam o erro ou mostra alguns dados do quizz na tela 1
@@ -455,6 +456,7 @@ function page12to31(){
 function page11to2(id){
     let changeClass1 = document.querySelector('.page1-1');          //utiliza o id para dizer para a página 2 qual quiz vai ser utilizado
     let changeClass2 = document.querySelector('.page2');
+    screen2(id);
     changeClass1.classList.add('displayNone');
     changeClass2.classList.remove('displayNone');
 }
@@ -462,6 +464,7 @@ function page11to2(id){
 function page12to2(id){
     let changeClass1 = document.querySelector('.page1-2');          //utiliza o id para dizer para a página 2 qual quiz vai ser utilizado
     let changeClass2 = document.querySelector('.page2');
+    screen2(id);
     changeClass1.classList.add('displayNone');
     changeClass2.classList.remove('displayNone');
 }
@@ -482,14 +485,12 @@ function verifyUserQuizz(){
     searchQuizz();
     if(exists == null){
         setInitialPage11();
+        isTrue = true;
     }else{
         setInitialPage12();
+        isTrue = false;
     }
 }
-
-verifyUserQuizz();
-
-/* Definindo variáveis - Tela 2 */
 let idQuizz;
 let quizzChosen={};
 let ans={};
@@ -505,7 +506,33 @@ const page2 = document.querySelector(".page2");
 
 /* Para voltar a tela 1 */
 function gohome(){
-    alert("Tela 1");
+    let changeClass1 = document.querySelector('.page2');
+    if(isTrue === true){
+        let changeClass2 = document.querySelector('.page1-1');
+        changeClass1.classList.add('displayNone');
+        changeClass2.classList.remove('displayNone');
+        restartQuizz();
+    } else {
+        let changeClass2 = document.querySelector('.page1-2');
+        changeClass1.classList.add('displayNone');
+        changeClass2.classList.remove('displayNone');
+        restartQuizz();
+    }
+}
+
+function gohome3(){
+    let changeClass1 = document.querySelector('.page3-4Full');
+    if(isTrue === true){
+        let changeClass2 = document.querySelector('.page1-1');
+        changeClass1.classList.add('displayNone');
+        changeClass2.classList.remove('displayNone');
+        restartQuizz();
+    } else {
+        let changeClass2 = document.querySelector('.page1-2');
+        changeClass1.classList.add('displayNone');
+        changeClass2.classList.remove('displayNone');
+        restartQuizz();
+    }
 }
 
 /* para reiniciar Quizz */
@@ -537,16 +564,14 @@ function finalResult(){
     /* Descobrindo o nível mínimo */
 
     for(let i=0; i<levels.length; i++){
-        
+
         /* Para enquadrar a pontuação ao nível correto */
         if(levels[i].minValue>=minLevel && levels[i].minValue <= finalScore){
-            
-            minLevel = levels[i].minValue;
+            minlevel = levels[i].minValue;
             finalImage=levels[i].image;
             finalText=levels[i].text;
             finalTitle=levels[i].title; 
         }
-      
     } 
 
     page2.innerHTML += `
@@ -636,10 +661,12 @@ function starting(resposta){
         
         /* Para lançar as opções de cada questão do quizz */
         let ans = quizzChosen.questions[i].answers;
-        
+        console.log(ans);
+
         //para embaralhar as respostas
         const newAns = ans.sort(comparador); 
 
+        console.log(newAns);
         let options="";
         for (let j=0; j<ans.length; j++){
 
@@ -667,7 +694,7 @@ function starting(resposta){
 
 /* Função para o caso de erro */
 function error(resposta){
-    alert ("Tente novamente mais tarde!")
+    /*alert ("Tente novamente mais tarde!")*/
     console.log(resposta);
 }
 
@@ -679,8 +706,8 @@ function getQuizz(){
 }
 
 /* Para obter o ID do Quizz */
-function screen2(){
-    idQuizz  = prompt("Qual o Id do Quizz?");
+function screen2(id){
+    idQuizz  = id;
     getQuizz();
 }
-    
+verifyUserQuizz();

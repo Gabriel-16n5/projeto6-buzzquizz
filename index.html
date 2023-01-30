@@ -12,7 +12,7 @@
     <title>BuzzQuizz</title>
 </head>
 <body>
-    <div onclick="screen2()" class="Header">BuzzQuizz</div>
+    <div class="Header">BuzzQuizz</div>
     <div class="page1-1 displayNone">
         <div class="box">
             <div class="none">
@@ -49,8 +49,61 @@
             
         </div>
     </div>
-    <div class="page2">
-
+    <div class="page2 displayNone">
+        <div class="quizzName">O quão Potterhead é você?</div>
+        <div class="questionBox">
+            <div class="questionTitle">Em qual animal Olho-Tonto Moody transfigurou Malfoy?</div>
+            <div class="options">
+                <div class="option">
+                    <img src="image3.png">
+                    <div class="nameOption">Gatíneo</div>
+                </div>
+                <div class="option">
+                    <img src="image4.png">
+                    <div class="nameOption">Ratata</div>
+                </div>
+                <div class="option">
+                    <img src="image7.png">
+                    <div class="nameOption">Sapo gordo</div>
+                </div>
+                <div class="option">
+                    <img src="image8.png">
+                    <div class="nameOption">Mustela putorius (o Furão)</div>
+                </div>
+            </div>
+    
+        </div>
+        <div class="questionBox">
+            <div class="questionTitle">Em qual animal Olho-Tonto Moody transfigurou Malfoy?</div>
+            <div class="options">
+                <div class="option wrong notChosen">
+                    <img src="image3.png">
+                    <div class="nameOption">Gatíneo</div>
+                </div>
+                <div class="option wrong notChosen">
+                    <img src="image4.png">
+                    <div class="nameOption">Ratata</div>
+                </div>
+                <div class="option wrong notChosen">
+                    <img src="image7.png">
+                    <div class="nameOption">Sapo gordo</div>
+                </div>
+                <div class="option right">
+                    <img src="image8.png">
+                    <div class="nameOption">Mustela putorius (o Furão)</div>
+                </div>
+            </div>
+    
+        </div>
+        <div class="resultBox">
+            <div class="result">88% de acerto: Você é praticamente um aluno de Hogwarts!</div>
+            <div class="messageFinal">
+                <img src="imageFinal.png">
+                <div class="textFinal">Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</div>
+            </div>
+        </div>
+        <button class="restartQuizz">Reiniciar Quizz</button>
+        <button class="goHome">Voltar pra home</button>
     </div>
     <div class="page3-1 displayNone">
         <h1 class="titlePage">Comece pelo começo</h1>
@@ -209,7 +262,7 @@
                 <div><img src="assets\castleBackgroud.png" alt="O quão Potterhead é você?"><p>O quão Potterhead é você?</p></div>
             </div>
             <button onclick="page34to21()" class="accessQuizz"><p class="textButton">Acessar Quizz</p></button>
-            <button class="backToHome"><p class="textButtonHome">Voltar pra home</p></button>
+            <button onclick="gohome3()" class="backToHome"><p class="textButtonHome">Voltar pra home</p></button>
         </div>
     </div>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
